@@ -16,13 +16,19 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 
+const frontendURL = process.env.NODE_ENV === 'production' 
+    ? 'https://chat-app-2515.onrender.com' // YOUR RENDER FRONTEND URL
+    : 'http://localhost:5173';
+
+
+app.use(cors({
+  origin: frontendURL,
+  credentials: true,
+}));
 
 app.use(express.json({ limit: "10mb" }));
 app.use(cookieParser());
-app.use(cors({
-    origin: frontendURL,
-    credentials: true,
-}));
+
 
 app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
