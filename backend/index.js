@@ -16,13 +16,16 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 
-const frontendURL = process.env.NODE_ENV === 'production' 
-    ? 'https://chat-app-two-olive-61.vercel.app' // YOUR RENDER FRONTEND URL
-    : 'http://localhost:5173';
+// const frontendURL = process.env.NODE_ENV === 'production' 
+//     ? 'https://chat-app-two-olive-61.vercel.app' // YOUR RENDER FRONTEND URL
+//     : 'http://localhost:5173';
 
 
 app.use(cors({
-  origin: frontendURL,
+  origin: [
+    "http://localhost:5173",                 
+    "https://chat-app-two-olive-61.vercel.app" 
+  ],
   credentials: true,
 }));
 
