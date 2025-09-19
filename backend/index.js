@@ -17,7 +17,7 @@ dotenv.config();
 const PORT = process.env.PORT;
 
 const frontendURL = process.env.NODE_ENV === 'production' 
-    ? 'https://chat-app-two-olive-61.vercel.app/' // YOUR RENDER FRONTEND URL
+    ? 'https://chat-app-two-olive-61.vercel.app' // YOUR RENDER FRONTEND URL
     : 'http://localhost:5173';
 
 
