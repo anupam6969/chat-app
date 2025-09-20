@@ -9,7 +9,8 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: ["http://localhost:5173", "https://chat-app-zyo8.vercel.app"],
+        origin: ["http://localhost:5173", "https://chat-app-two-olive-61.vercel.app"],
+        credentials: true,
     },
 });
 
